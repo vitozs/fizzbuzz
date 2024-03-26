@@ -22,5 +22,9 @@ public class FizzBuzzTest {
     void testForMultipleOfBoth(){
         Assertions.assertEquals("FizzBuzzBuzz", fizzBuzz.getFizzBuzzOfNumber(15));
     }
+    @Test
+    void test(){
+        Assertions.assertEquals("FizzBuzz", fizzBuzz.getFizzBuzzOfNumber(53));
+    }
 
 }

@@ -11,23 +11,26 @@ public class InputResponseBuilder {
         addStringToResultIfEqualsOrDivisible("Buzz", BUZZ);
         return this.result;
     }
-    private void addStringToResultIfEqualsOrDivisible(String resultAppend, Integer constant){
+    public void addStringToResultIfEqualsOrDivisible(String resultAppend, Integer constant){
         addStringIfDivisible(resultAppend, constant);
         addStringIfContainsNumber(resultAppend, constant);
     }
-    private void addStringIfDivisible(String resultAppend, Integer constant){
+    public void addStringIfDivisible(String resultAppend, Integer constant){
         if(userInput % constant == 0){
             this.result += resultAppend;
         }
     }
-    private void addStringIfContainsNumber(String resultAppend, Integer constant){
+    public void addStringIfContainsNumber(String resultAppend, Integer constant){
         String numVerifier = userInput.toString();
 
         if(numVerifier.contains(constant.toString()) && userInputHasTwoDigits()){
             this.result += resultAppend;
         }
     }
-    private boolean userInputHasTwoDigits(){
+    public boolean userInputHasTwoDigits(){
         return userInput >= 10;
+    }
+    public String getResult(){
+        return result;
     }
 }
